@@ -12,6 +12,11 @@
   font-size: 24px;
   line-height: 1.19;
   color: $action_color;
+  transition: text-shadow 250ms $typical-cubic;
+
+  &:hover {
+    text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .logo__variable {
