@@ -1,0 +1,50 @@
+// for use "@extend"
+
+%button {
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 1.87;
+  cursor: pointer;
+  background-color: $action-color;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: $button-text-color;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: $typical-transition-background;
+}
+
+%visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+%section-title {
+  font-size: 28px;
+  line-height: 1.17;
+  font-weight: bold;
+  text-align: center;
+}
+
+%mm {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.17;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  color: $main-text-color;
+}

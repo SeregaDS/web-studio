@@ -1,0 +1,212 @@
+.join-form {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.join-form__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.join-form__label {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+
+  &:hover {
+    color: $action-color;
+    cursor: pointer;
+  }
+
+  &:hover .join-form__input,
+  &:hover .join-form__inputtext {
+    border-color: $action-color;
+    cursor: pointer;
+  }
+
+  &:not(:nth-child(5)) {
+    margin-bottom: 10px;
+  }
+
+  &:hover .join-form__name {
+    color: $action-color;
+  }
+
+  &:hover .join-form__icon {
+    fill: $action-color;
+  }
+}
+
+.join-form__name {
+  margin-bottom: 4px;
+  color: $secondary-text-color;
+  font-size: 12px;
+  line-height: 1.67;
+  letter-spacing: 0.01em;
+}
+
+.join-form__input {
+  flex-grow: 1;
+  max-height: 40px;
+  padding: 11px 12px 11px 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  &:focus ~ .join-form__icon {
+    fill: $action-color;
+  }
+
+  &:focus ~ .join-form__name {
+    color: $action-color;
+  }
+
+  &:not(:placeholder-shown) {
+    border: 1px solid $action-color;
+  }
+
+  &:not(:placeholder-shown) + .join-form__icon {
+    fill: $action-color;
+  }
+
+  &:not(:placeholder-shown) ~ .join-form__name {
+    color: $action-color;
+  }
+
+  &:focus {
+    border: 1px solid $action-color;
+    outline: none;
+  }
+}
+
+.join-form__inputtext {
+  resize: none;
+  max-height: 120px;
+  display: block;
+  //   width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  &:focus {
+    border: 1px solid $action-color;
+    outline: none;
+  }
+
+  &:not(:placeholder-shown) {
+    border: 1px solid $action-color;
+  }
+
+  &:focus ~ .join-form__name {
+    color: $action-color;
+  }
+
+  &:not(:placeholder-shown) ~ .join-form__name {
+    color: $action-color;
+  }
+
+  &::placeholder {
+    font-size: 12px;
+    line-height: 1.67;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.join-form__icon {
+  position: absolute;
+  left: 12px;
+  bottom: 11px;
+  display: block;
+}
+
+.join-form__accept {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.join-form__checkbox {
+  position: absolute;
+  left: 12px;
+  top: 4px;
+
+  width: 16px;
+  height: 15px;
+
+  opacity: 1;
+
+  fill: currentColor;
+
+  transition: opacity 250ms $typical-cubic;
+}
+
+.join-form__checkboxchecked {
+  position: absolute;
+  left: 12px;
+  top: 4px;
+  width: 16px;
+  height: 15px;
+  opacity: 0;
+  transform: scale(0.1) rotate(1turn);
+  transition: opacity 250ms $typical-cubic, transform 250ms $typical-cubic;
+}
+
+.join-form__checkboxhidden {
+  @extend %visually-hidden;
+
+  &:focus ~ .join-form__checkbox {
+    outline: 3px solid $action-color;
+    border-radius: 2px;
+    box-shadow: 1px -1px 0px 0px $action-color inset, -1px 1px 0px 0px $action-color inset;
+  }
+
+  &:focus ~ .join-form__checkboxchecked {
+    outline: 3px solid $main-text-color;
+    border-radius: 2px;
+    box-shadow: 1px -1px 0px 0px $main-text-color inset, -1px 1px 0px 0px $main-text-color inset;
+  }
+
+  &:checked ~ .join-form__checkbox {
+    position: absolute;
+    left: 12px;
+    opacity: 0;
+    fill: white;
+  }
+
+  &:checked ~ .join-form__checkboxchecked {
+    position: absolute;
+    opacity: 1;
+
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.join-form__offer {
+  font-size: 14px;
+  line-height: 1.71;
+  color: $secondary-text-color;
+  margin-left: 35px;
+}
+
+.join-form__offerlink {
+  color: $action-color;
+  text-decoration: underline;
+}
+
+.join-form__submit {
+  @extend %button;
+  &:hover,
+  &:focus {
+    background-color: $hero-button-hover;
+  }
+}

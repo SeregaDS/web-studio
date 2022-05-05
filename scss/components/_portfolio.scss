@@ -1,0 +1,72 @@
+.page-title {
+  @extend %visually-hidden;
+}
+
+// !Кнопки
+
+.buttons {
+  margin-bottom: 30px;
+}
+
+.buttons__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -15px;
+}
+
+.buttons__item {
+  margin-top: 15px;
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.buttons__filter {
+  padding: 6px 22px;
+  font-size: 16px;
+  line-height: 1.62;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  display: block;
+  background-color: $bgc-secondary;
+  border-radius: 4px;
+  transition: $typical-transition-background, $typical-transition-color,
+    $typical-transition-boxshadow;
+
+  &:hover,
+  &:focus {
+    background-color: $action-color;
+    color: $text-white-color;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.buttons__input:checked + .buttons__filter {
+  background-color: $action-color;
+  color: $text-white-color;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.buttons__input {
+  @extend %visually-hidden;
+}
+
+@media screen and (min-width: $min-w-tablet) {
+  .buttons {
+    margin-bottom: 40px;
+  }
+
+  .buttons__list {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: $min-w-desktop) {
+  .buttons {
+    margin-bottom: 50px;
+  }
+}

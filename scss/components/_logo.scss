@@ -1,0 +1,42 @@
+.logo {
+  display: block;
+  &--footer {
+    margin-bottom: 20px;
+  }
+}
+
+.logo__main {
+  text-decoration: none;
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.19;
+  color: $action_color;
+}
+
+.logo__variable {
+  color: #000000;
+
+  &--footer {
+    color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo {
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    &--footer {
+      padding-top: 0;
+      padding-bottom: 0;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: $min-w-tablet) {
+  .logo__main {
+    font-size: 26px;
+  }
+}

@@ -1,0 +1,75 @@
+.hero {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 118px;
+  padding-bottom: 118px;
+
+  background-color: $bgc-hero;
+  background-image: linear-gradient(359deg, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    image-set('../images/bg/hero-bg-mob.jpg' 1x, '../images/bg/hero-bg-mob@x2.jpg' 2x);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero__title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+
+  font-size: 26px;
+  text-align: center;
+  line-height: 1.62;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $text-white-color;
+  word-wrap: normal;
+}
+
+.hero__button {
+  @extend %button;
+  &:hover {
+    background-color: $hero-button-hover;
+  }
+}
+
+// !tablet
+
+@media screen and (min-width: $min-w-tablet) {
+  .hero {
+    max-width: 849px;
+    background-image: linear-gradient(359deg, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      image-set('../images/bg/hero-bg-tab.jpg' 1x, '../images/bg/hero-bg-tab@x2.jpg' 2x);
+  }
+}
+
+// *Добавлена точка из субьективных соображений,
+// *предыдущий фон сильно мылит
+// *нет размера картинки от 768px до 1199px
+
+@media screen and (min-width: 850px) {
+  .hero {
+    max-width: 1199px;
+    background-image: linear-gradient(359deg, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      image-set('../images/bg/hero-bg-desk.jpg' 1x, '../images/bg/hero-bg-desk@x2.jpg' 2x);
+  }
+}
+
+// !desk
+
+@media screen and (min-width: $min-w-desktop) {
+  .hero {
+    max-width: 1600px;
+    background-image: linear-gradient(359deg, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      image-set('../images/bg/hero-bg-desk.jpg' 1x, '../images/bg/hero-bg-desk@x2.jpg' 2x);
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+
+  .hero__title {
+    font-size: 44px;
+    line-height: 1.36;
+  }
+}

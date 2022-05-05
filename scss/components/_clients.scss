@@ -1,0 +1,42 @@
+.clients {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.clients__link {
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: $company-color;
+
+  border: 1px solid $company-color;
+  border-radius: 4px;
+  transition: $typical-transition-color, border-color 250ms $typical-cubic;
+
+  &:hover,
+  &:focus {
+    color: $action-color;
+    border-color: $action-color;
+  }
+}
+
+.clients__icon {
+  fill: currentColor;
+}
+
+@media screen and (min-width: $min-w-tablet) {
+  .clients {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: $min-w-desktop) {
+  .clients {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
